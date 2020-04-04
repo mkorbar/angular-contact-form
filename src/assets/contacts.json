@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Tone",
+    "gender": "m",
+    "email": "foo@bar.com",
+    "phone": "00231 02036 032"
+  },
+  {
+    "id": 2,
+    "name": "Micka",
+    "gender": "f",
+    "email": "gegre@bar.com"
+  },
+  {
+    "id": 3,
+    "name": "Štef",
+    "gender": "m",
+    "phone": "00231 02036 032"
+  },
+  {
+    "id": 4,
+    "name": "Francka",
+    "gender": "f"
+  }
+]
