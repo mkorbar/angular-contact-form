@@ -15,7 +15,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.cs.getContacts().subscribe(contacts => {
-      console.log(contacts);
       this.contacts = contacts;
     });
   }
