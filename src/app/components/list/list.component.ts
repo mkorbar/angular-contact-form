@@ -20,13 +20,17 @@ export class ListComponent implements OnInit {
   }
 
   addContact(contact: Contact) {
-    // TODO: add an API call
-    this.contacts.unshift(contact);
+    this.cs.createContact(contact).subscribe(response => {
+      this.contacts.unshift(response);
+    });
   }
 
   deleteContact(contact: Contact) {
-    // TODO: add an API call
     this.contacts = this.contacts.filter(c => c.id !== contact.id);
+    this.cs.deleteContact(contact).subscribe(response => {
+      console.log('contact deleted');
+      console.log(response);
+    });
   }
 
 }
