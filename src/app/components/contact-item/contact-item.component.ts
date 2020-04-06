@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Contact} from '../../models/contact.model';
 
 @Component({
@@ -8,6 +8,7 @@ import {Contact} from '../../models/contact.model';
 })
 export class ContactItemComponent implements OnInit {
   @Input() contact: Contact;
+  @Output() deleteContact: EventEmitter<Contact> = new EventEmitter();
 
   constructor() { }
 
@@ -27,5 +28,9 @@ export class ContactItemComponent implements OnInit {
       }
     }
     return ['alert', genderClass];
+  }
+
+  delete(contact: Contact) {
+    this.deleteContact.emit(contact);
   }
 }

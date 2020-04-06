@@ -2,7 +2,8 @@
     {{contact.name}}
     <span class="float-right">
       {{contact.email}}
+      <span *ngIf="contact.email && contact.phone"> | </span>
       {{contact.phone}}
-      <i class="fa fa-times" aria-hidden="true"></i>
+      <i class="fa fa-times" aria-hidden="true" (click)="delete(contact)"></i>
     </span>
 </div>

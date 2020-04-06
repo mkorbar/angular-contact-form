@@ -1,0 +1,69 @@
+<form #form="ngForm" class="form pt-3 pb-3" (ngSubmit)="onSubmit()" novalidate>
+  <label class="col-12">
+    Name <sup>*</sup>
+    <span *ngIf="nameField.invalid && nameField.touched" class="text-danger float-right">Name is required</span>
+    <input
+      type="text"
+      name="title"
+      [(ngModel)]="name"
+      placeholder="Name and surname"
+      class="w-100"
+      required
+      #nameField="ngModel"
+      [class.is-invalid]="nameField.invalid && nameField.touched">
+  </label>
+  <label class="col-12 mb-0">
+    <span *ngIf="genderField.invalid && genderField.touched" class="text-danger float-right">Please select gender </span>
+    <input type="radio"
+           required #genderField="ngModel"
+           name="gender"
+           value="m"
+           [(ngModel)]="gender"> Male
+  </label>
+  <label class="col-12">
+    <input type="radio"
+           required #genderField="ngModel"
+           name="gender"
+           value="f"
+           [(ngModel)]="gender" > Female
+  </label>
+
+  <h6 class="border-bottom ml-3 mt-2"><b>Contact information</b></h6>
+
+  <label class="col-6">
+    Email
+    <span *ngIf="emailField.invalid && emailField.touched" class="text-danger float-right">Should be a valid email</span>
+    <input #emailField="ngModel"
+           [(ngModel)]="email"
+           [class.is-invalid]="emailField.invalid && emailField.touched"
+           class="w-100"
+           email
+           name="email"
+           placeholder="name@example.com"
+           type="email">
+    <small class="d-block text-muted ">We'll never share your email with anyone else</small>
+  </label>
+
+  <label class="col-6">
+    Telephone
+    <span *ngIf="phoneField.invalid && phoneField.touched" class="text-danger float-right">Must be numeric</span>
+    <input
+      #phoneField="ngModel"
+      [(ngModel)]="phone"
+      [class.is-invalid]="phoneField.invalid && phoneField.touched"
+      class="w-100"
+      name="phone"
+      pattern="[\d ]*"
+      placeholder="010 233 445"
+      type="tel"
+    >
+  </label>
+
+  <div class="text-right">
+    <button type="reset" class="btn btn-secondary m-1">Cancel</button>
+    <button type="submit"
+            class="btn btn-primary m-1"
+            [class.disabled]="form.invalid"
+            [disabled]="form.invalid">Save</button>
+  </div>
+</form>

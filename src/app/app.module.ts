@@ -5,16 +5,20 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './components/list/list.component';
 import { ContactItemComponent } from './components/contact-item/contact-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NewContactFormComponent } from './components/new-contact-form/new-contact-form.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
-    ContactItemComponent
+    ContactItemComponent,
+    NewContactFormComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

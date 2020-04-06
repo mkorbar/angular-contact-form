@@ -1,0 +1,12 @@
+small {
+  font-size: 0.7rem;
+}
+label {
+  vertical-align: top;
+}
+button {
+  width: 20%
+}
+.is-invalid {
+  border: solid #dc3545;
+}

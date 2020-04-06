@@ -1,6 +1,10 @@
-<div>
+<div class="col-sm-8 border rounded bg-white">
+  <app-new-contact-form (addContact)="addContact($event)"></app-new-contact-form>
+</div>
+<div class="col-sm-8 border rounded bg-white pt-3">
   <app-contact-item
     *ngFor="let contact of contacts"
     [contact]="contact"
+    (deleteContact)="deleteContact($event)"
     ></app-contact-item>
 </div>
